@@ -46,6 +46,7 @@ app.use((req, res) => {
 });
 
 // Iniciar el servidor
-app.listen(PORT, () => {
+// configuracion de puerto para render: Puerto 0.0.0.0
+app.listen(PORT,'0.0.0.0', () => {
   console.log(`Servidor escuchando el puerto http://localhost ${PORT}`);
 });
