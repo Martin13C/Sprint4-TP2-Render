@@ -1,0 +1,78 @@
+/* layout.css */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+  }
+  
+  /* NAV */
+  nav {
+    display: flex;
+    flex-direction: row;
+    background-color: #2d3e50;
+    padding: 15px 30px;
+  }
+  .nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .logo, .home, .dashboard, .addSuper{
+    width: 50px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav li a:hover {
+    color: #ffd166;
+  }
+  
+  /* MAIN */
+  main {   
+    padding: 40px 20px;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+  }
+  
+  /* FOOTER */
+  footer {
+    background-color: #2d3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+  
+  /* Responsive NAV */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  

@@ -1,0 +1,70 @@
+<div class="container">
+    <h1>Lista de Superhéroes</h1>
+
+    <div class="new-superhero-container">
+        <a href="/api/agregar" class="btn-add"><i class="fas fa-plus"></i> Nuevo Superhéroe</a>
+    </div>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Nombre Real</th>
+                <th>Edad</th>
+                <th>Planeta Origen</th>
+                <th>Debilidad</th>
+                <th>Poderes</th>
+                <th>Aliados</th>
+                <th>Enemigos</th>
+                <th>Creador</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% superheroes.forEach(superheroe=> { %>
+                <tr>
+                    <td>
+                        <%= superheroe.Nombre %>
+                    </td>
+                    <td>
+                        <%= superheroe["Nombre Real"] %>
+                    </td>
+                    <td>
+                        <%= superheroe.Edad %>
+                    </td>
+                    <td>
+                        <%= superheroe["Planeta de origen"] %>
+                    </td>
+                    <td>
+                        <%= superheroe.Debilidad %>
+                    </td>
+                    <td>
+                        <%= superheroe.Poderes %>
+                    </td>
+                    <td>
+                        <%= superheroe.Aliados %>
+                    </td>
+                    <td>
+                        <%= superheroe.Enemigos %>
+                    </td>
+                    <td>
+                        <%= superheroe.Creador %>
+                    </td>
+                    <td>
+                        <a href="/api/<%= superheroe._id%>/editar" class="btn-edit"><i class="fas fa-edit"></i>
+                            Editar</a>
+                        <form action="/api/<%= superheroe._id %>/eliminar?_method=DELETE" method="POST"
+                            class="delete-form" onsubmit="return confirmarEliminacion()">
+                            <button type="submit" class="btn-delete"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                        </form>
+                        <script>
+                            function confirmarEliminacion() {
+                              return confirm("¿Estás seguro de que deseas eliminar este superhéroe?");
+                            }
+                          </script>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</div>

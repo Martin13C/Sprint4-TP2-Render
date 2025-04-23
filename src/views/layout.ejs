@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <!-- cargar css en base al titulo prueba  -->
+    <% if (title === 'Dashboard') { %>
+        <link rel="stylesheet" href="/css/dashboard.css">
+      <% } else if (title === 'Agregar Superheroe') { %>
+        <link rel="stylesheet" href="/css/addSuperheroe.css">
+      <% } else if (title === 'Editar Superheroe') { %>
+        <link rel="stylesheet" href="/css/editSuperheroes.css">
+      <% } %>
+</head>
+<body>
+    <%- include('partials/nav') %>
+    <main>
+        <%- body %>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
