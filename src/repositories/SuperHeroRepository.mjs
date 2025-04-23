@@ -1,7 +1,9 @@
-import { query } from "express";
+// import { query } from "express";
 import SuperHero from "../models/SuperHero.mjs";
 import IRepository from "./IRepository.mjs";
+import express from "express";
 
+const { query } = express;
 class SuperHeroRepository extends IRepository {
   // async obtenerPorId(id) {
   //     return await SuperHero.findById (id);
